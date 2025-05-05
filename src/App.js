@@ -2,23 +2,41 @@ import React from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
-// import { faYoutube, faInstagram, faAmazon } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
+  const rectangles = Array.from({ length: 12 }, (_, index) => {
+    const sizeFactor = 100 - index * 8; // Decrease size for each rectangle
+    const translateFactor = (index) * 5; // Reverse translation for smaller rectangles
+    return (
+      <div
+        key={index}
+        className="svg-block"
+        style={{
+          zIndex: index + 1, // Smallest rectangle at the top
+          width: `${sizeFactor}%`,
+          height: `${sizeFactor}%`,
+          animationDelay: `${(11 - index) * 0.2}s`, // Smallest rectangle moves first
+          '--translate-factor': `${translateFactor}%`, // Custom property for translation
+        }}
+      ></div>
+    );
+  });
+
   return (
     <div className="App">
+      {/* Animated Background */}
+      <div className="background">{rectangles}</div>
+
       <div className="container">
         {/* Profile Section */}
         <div className="profile">
-          
           <img
-            // Placeholder: replace with your profile picture URL
             src="https://i.seadn.io/s/raw/files/b5f14b666829791d1ec5e3c8aac8f584.png?auto=format&dpr=1&w=1400&fr=1"
             alt="Profile"
             className="profile-picture"
           />
-          <h1>Video Creator</h1>
-          <p>Support my YouTube Journey!</p>
+          <h1 className="name">Video Creator</h1>
+          <p className="description">Support my YouTube Journey!</p>
         </div>
 
         {/* Social Media Links */}
