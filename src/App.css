@@ -74,32 +74,19 @@ body {
 
 .svg-block {
   position: absolute;
+  /* top: 0;
+  left: 0; */
+  transform-origin: center;
   background: linear-gradient(45deg, #ff00ff, #00ffff);
-  opacity: 0.7;
-  animation: moveBlocks 20s ease-in-out infinite;
-  mix-blend-mode: screen;
+  background-size: 100% 100%; /* Ensure gradient spans the entire rectangle */
+  opacity: 1;
+  animation: moveBlocks 10s ease-in-out infinite;
+  mix-blend-mode: normal;
 }
 
 @keyframes moveBlocks {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
+  50% {
     transform: translate(var(--translate-factor), var(--translate-factor)) rotate(180deg);
   }
-  50% {
-    transform: translate(calc(var(--translate-factor) * 2), calc(var(--translate-factor) * 2)) rotate(180deg); /* no rotation */
-  }
-  75% {
-    transform: translate(calc(var(--translate-factor) * 3), calc(var(--translate-factor) * 3)) rotate(360deg);
-  }
-  80% {
-    transform: translate(calc(var(--translate-factor) * 3), calc(var(--translate-factor) * 3)) rotate(360deg); /* Pause starts */
-  }
-  95% {
-    transform: translate(calc(var(--translate-factor) * 3), calc(var(--translate-factor) * 3)) rotate(360deg); /* Pause ends */
-  }
-  100% {
-    transform: translate(0, 0) rotate(360deg); /* Return to start */
-  }
 }
+

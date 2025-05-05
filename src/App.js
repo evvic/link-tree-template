@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
-
 function App() {
   const rectangles = Array.from({ length: 12 }, (_, index) => {
     const sizeFactor = 100 - index * 8; // Decrease size for each rectangle
-    const translateFactor = (index) * 5; // Reverse translation for smaller rectangles
+    const translateFactor = (100 - sizeFactor) * index*index/35; // Reverse translation for smaller rectangles
+    const offset = index * 1; // Each rectangle starts 1% farther from the top-left corner
     return (
       <div
         key={index}
@@ -15,7 +15,9 @@ function App() {
           zIndex: index + 1, // Smallest rectangle at the top
           width: `${sizeFactor}%`,
           height: `${sizeFactor}%`,
-          animationDelay: `${(11 - index) * 0.2}s`, // Smallest rectangle moves first
+          top: `${offset}%`, // Dynamic top offset
+          left: `${offset}%`, // Dynamic left offset
+          animationDelay: `${index * 0.05}s`, // Smallest rectangle moves first
           '--translate-factor': `${translateFactor}%`, // Custom property for translation
         }}
       ></div>
