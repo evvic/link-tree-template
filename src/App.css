@@ -64,6 +64,7 @@ body {
 
 .background {
   position: fixed;
+  background-color: black;
   top: 0;
   left: 0;
   width: 100%;
@@ -80,13 +81,24 @@ body {
   background: linear-gradient(45deg, #ff00ff, #00ffff);
   background-size: 100% 100%; /* Ensure gradient spans the entire rectangle */
   opacity: 1;
-  animation: moveBlocks 10s ease-in-out infinite;
+  animation: moveBlocks 20s ease-in-out infinite;
   mix-blend-mode: normal;
 }
 
 @keyframes moveBlocks {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
   50% {
-    transform: translate(var(--translate-factor), var(--translate-factor)) rotate(180deg);
+    transform: translate(calc(var(--translate-factor) * 0.15), calc(var(--translate-factor) * 0.15)) rotate(180deg);
+  }
+  /* 75% {
+    transform: translate(calc(var(--translate-factor) * 0.2), calc(var(--translate-factor) * 0.2)) rotate(270deg);
+  } */
+  90% {
+    transform: translate(calc(var(--translate-factor) * 0.2), calc(var(--translate-factor) * 0.2)) rotate(365deg);
   }
 }
-

@@ -6,9 +6,13 @@ import { faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
 function App() {
   const rectangles = Array.from({ length: 12 }, (_, index) => {
     const sizeFactor = 100 - index * 8; // Decrease size for each rectangle
-    const parentSizeFactor = 100 - (index - 1) * 8; // Size of the parent rectangle
-    const translateFactor = (parentSizeFactor - sizeFactor) / 2; // Ensure translation keeps it inside the parent
+    const translateFactor = (100 - sizeFactor) / 2; // Translation based on size difference
+    var amplifiedTranslateFactor = translateFactor * Math.pow(1.4, index); // Amplify translation for smaller rectangles
     const offset = index * 1; // Each rectangle starts 1% farther from the top-left corner
+
+    for (let i = index; i >= 11; i--) {
+      amplifiedTranslateFactor *= 1.25;
+    }
 
     return (
       <div
@@ -20,8 +24,8 @@ function App() {
           height: `${sizeFactor}%`,
           top: `${offset}%`, // Dynamic top offset
           left: `${offset}%`, // Dynamic left offset
-          animationDelay: `${index * 0.2}s`, // Largest rectangle moves first
-          '--translate-factor': `${translateFactor}%`, // Custom property for translation
+          animationDelay: `${index * 0.05}s`, // Largest rectangle moves first
+          '--translate-factor': `${amplifiedTranslateFactor}%`, // Amplified translation factor
         }}
       ></div>
     );
