@@ -3,7 +3,7 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: black;
 }
 
 .container {
@@ -28,14 +28,22 @@ body {
   margin-bottom: 20px;
 }
 
+/* Make all text white */
+body, .container, .profile, .description, .name, .link {
+  color: white; /* Set text color to white */
+}
+
+
+/* Social icons inside the container */
+/* Social icons with blur effect */
 .social-icon {
-  font-size: 24px;
-  color: #007bff;
-  transition: color 0.3s ease;
+  font-size: 24px; /* Adjust size as needed */
+  color: white; /* Fully white by default */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
 
 .social-icon:hover {
-  color: #0056b3;
+  opacity: 0.7; /* Reduce opacity to 70% on hover */
 }
 
 .links {
@@ -50,16 +58,19 @@ body {
   padding: 10px 20px;
   text-decoration: none;
   color: white;
-  background-color: #007bff;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
   border-radius: 5px;
   width: 300px;
   font-size: 16px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  backdrop-filter: blur(10px); /* Apply blur effect to the background */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add a subtle border */
 }
 
 .link:hover {
-  background-color: #0056b3;
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly increase opacity on hover */
 }
 
 .background {
@@ -70,14 +81,13 @@ body {
   height: 100%;
   z-index: -1; /* Push it behind all other elements */
   overflow: hidden;
+  background-color: black; /* Ensure the background is black */
 }
 
 .svg-block {
   position: absolute;
-  /* top: 0;
-  left: 0; */
   transform-origin: center;
-  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  background: linear-gradient(30deg, #000000, #000000, #420071, #6c48ba, #c381f5); /* Light pink to red to black */
   background-size: 100% 100%; /* Ensure gradient spans the entire rectangle */
   opacity: 1;
   animation: moveBlocks 20s ease-in-out infinite;
@@ -88,16 +98,19 @@ body {
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
-  25% {
+  5% {
     transform: translate(0, 0) rotate(-5deg);
+  }
+  15% {
+    transform: translate(0, 0) rotate(0deg);
   }
   50% {
     transform: translate(calc(var(--translate-factor) * 0.15), calc(var(--translate-factor) * 0.15)) rotate(180deg);
   }
-  /* 75% {
-    transform: translate(calc(var(--translate-factor) * 0.2), calc(var(--translate-factor) * 0.2)) rotate(270deg);
-  } */
+  75% {
+    transform: translate(calc(var(--translate-factor) * 0.2), calc(var(--translate-factor) * 0.2)) rotate(360deg);
+  }
   90% {
-    transform: translate(calc(var(--translate-factor) * 0.2), calc(var(--translate-factor) * 0.2)) rotate(365deg);
+    transform: translate(calc(var(--translate-factor) * 0.2), calc(var(--translate-factor) * 0.2)) rotate(535deg);
   }
 }

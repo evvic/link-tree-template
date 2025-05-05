@@ -45,17 +45,17 @@ function App() {
             className="profile-picture"
           />
           <h1 className="name">Video Creator</h1>
-          <p className="description">Support my YouTube Journey!</p>
+          <p className="description">Support my social media Journey!</p>
         </div>
 
         {/* Social Media Links */}
         <div className="social-links">
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faYoutube} className="social-icon" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faInstagram} className="social-icon" />
-          </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faYoutube} className="social-icon" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} className="social-icon" />
+            </a>
         </div>
 
         {/* Affiliate Link */}
