@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faInstagram, faAmazon } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
+// import { faYoutube, faInstagram, faAmazon } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
   return (
