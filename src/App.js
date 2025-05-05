@@ -11,7 +11,7 @@ function App() {
     const offset = index * 1; // Each rectangle starts 1% farther from the top-left corner
 
     for (let i = index; i >= 11; i--) {
-      amplifiedTranslateFactor *= 1.25;
+      amplifiedTranslateFactor *= 1.22;
     }
 
     return (
