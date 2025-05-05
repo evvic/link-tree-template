@@ -44,7 +44,7 @@ function App() {
             alt="Profile"
             className="profile-picture"
           />
-          <h1 className="name">Video Creator</h1>
+          <h1 className="name creator-name">Video Creator</h1>
           <p className="description">Support my social media Journey!</p>
         </div>
 
