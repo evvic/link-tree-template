@@ -96,11 +96,20 @@ body, .container, .profile, .description, .name, .link {
 }
 
 .footer {
-  margin-top: 20px;
+  position: absolute; /* Position the footer at the bottom */
+  bottom: 0; /* Align it to the bottom of the viewport */
+  left: 0;
+  width: 100%; /* Ensure it spans the full width of the screen */
   padding: 10px 0;
   text-align: center;
   font-size: 14px;
   color: white;
+  opacity: 0.3; /* Low opacity by default */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.footer:hover {
+  opacity: 1; /* Full opacity on hover */
 }
 
 .footer-link {

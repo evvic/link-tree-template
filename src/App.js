@@ -3,6 +3,7 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Background from './background'; // Import the Background component
+import Footer from './footer'; // Import the Footer component
 
 function App() {
   return (
@@ -39,17 +40,9 @@ function App() {
           </a>
         </div>
       </div>
+
       {/* Footer */}
-      <footer className="footer">
-        <a
-          href="https://github.com/evvic/link-tree-template"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="footer-link"
-        >
-          Developed by ewic.mp4
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
