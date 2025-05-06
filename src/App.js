@@ -65,6 +65,17 @@ function App() {
           </a>
         </div>
       </div>
+      {/* Footer */}
+      <footer className="footer">
+        <a
+          href="https://github.com/evvic/link-tree-template"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link"
+        >
+          Developed by ewic.mp4
+        </a>
+      </footer>
     </div>
   );
 }
