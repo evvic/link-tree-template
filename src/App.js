@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube, faInstagram, faAmazon } from '@fortawesome/free-brands-svg-icons';
 import Background from './background'; // Import the Background component
 import Footer from './footer'; // Import the Footer component
 
@@ -36,7 +36,8 @@ function App() {
         {/* Affiliate Link */}
         <div className="links">
           <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" className="link">
-            Shop: Tech gear recommended by my coworker
+            <FontAwesomeIcon icon={faAmazon} className="social-icon" />
+            Storefront: Tech gear recommended by my coworker!
           </a>
         </div>
       </div>
